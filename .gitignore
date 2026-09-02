@@ -1,0 +1,27 @@
+# Gradle files
+.gradle/
+build/
+
+# Android
+*.apk
+*.aar
+*.ap_
+*.dex
+
+# Local configuration file
+local.properties
+
+# IDE files
+.idea/
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# Mac files
+.DS_Store
+
+# Kotlin
+kotlin-js-store/

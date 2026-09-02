@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.AgendaMedica" parent="Theme.Material3.Light">
+        <item name="colorPrimary">@color/md_theme_primary</item>
+        <item name="colorSecondary">@color/md_theme_secondary</item>
+        <item name="colorTertiary">@color/md_theme_tertiary</item>
+    </style>
+    
+    <color name="md_theme_primary">#1F6E3F</color>
+    <color name="md_theme_secondary">#6CA76C</color>
+    <color name="md_theme_tertiary">#D4A574</color>
+    
+    <color name="past_appointment">#FFD700</color>
+    <color name="today">#FF0000</color>
+    <color name="future_appointment">#00AA00</color>
+</resources>
