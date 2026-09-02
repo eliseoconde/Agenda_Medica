@@ -43,6 +43,31 @@ cd "$SAVED" >/dev/null
 APP_NAME="Gradle"
 APP_BASE_NAME=`basename "$0"`
 
+# Detect OS
+case "`uname`" in
+  Darwin* )
+    darwin=true
+    ;;
+  MINGW* )
+    msys=true
+    ;;
+  CYGWIN* )
+    cygwin=true
+    ;;
+esac
+
+# Helper functions
+die ( ) {
+    echo
+    echo "$*"
+    echo
+    exit 1
+}
+
+warn ( ) {
+    echo "$*"
+}
+
 # Add default JVM options here.
 DEFAULT_JVM_OPTS="-Xmx1024m -Xms1024m"
 
@@ -88,8 +113,8 @@ if [ "$cygwin" != "true" -a "$msys" != "true" ] && command -v ulimit "$@" >/dev/
 fi
 
 # For Darwin, add options to specify how the application appears in the dock
-if $darwin; then
-    DEFAULT_JVM_OPTS="$DEFAULT_JVM_OPTS \"-Xdock:name=$APP_NAME\" \"-Xdock:icon=$APP_HOME/media/gradle.icns\""
+if [ "$darwin" = "true" ]; then
+    DEFAULT_JVM_OPTS="$DEFAULT_JVM_OPTS -Xdock:name=$APP_NAME -Xdock:icon=$APP_HOME/media/gradle.icns"
 fi
 
 # For Cygwin or MSYS, switch paths to Windows format before running java
