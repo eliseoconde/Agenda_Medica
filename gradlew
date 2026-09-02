@@ -44,7 +44,7 @@ APP_NAME="Gradle"
 APP_BASE_NAME=`basename "$0"`
 
 # Add default JVM options here.
-DEFAULT_JVM_OPTS=-Xmx1024m -Xms1024m
+DEFAULT_JVM_OPTS="-Xmx1024m -Xms1024m"
 
 # Use the maximum available, or set a specific value
 #MAX_FD="maximum"
