@@ -10,6 +10,10 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    
+    env:
+      GRADLE_OPTS: "-Xmx2048m -XX:MaxMetaspaceSize=512m"
+      JAVA_TOOL_OPTIONS: "-Xmx2048m"
 
     steps:
     - name: Checkout code
@@ -22,11 +26,16 @@ jobs:
         distribution: 'temurin'
         cache: gradle
 
+    - name: Verify Java installation
+      run: |
+        java -version
+        javac -version
+
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
 
     - name: Build APK with Gradle
-      run: ./gradlew assembleDebug
+      run: ./gradlew assembleDebug --stacktrace --info
 
     - name: Upload APK
       uses: actions/upload-artifact@v4
@@ -35,7 +44,7 @@ jobs:
         path: app/build/outputs/apk/debug/*.apk
 
     - name: Build Release APK
-      run: ./gradlew assembleRelease
+      run: ./gradlew assembleRelease --stacktrace
       continue-on-error: true
 
     - name: Upload Release APK
