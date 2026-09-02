@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Agenda Médica</string>
+    <string name="add_appointment">Añadir Cita</string>
+    <string name="edit_appointment">Editar Cita</string>
+    <string name="delete_appointment">Eliminar Cita</string>
+    <string name="date">Fecha</string>
+    <string name="time">Hora</string>
+    <string name="medical_center">Centro Médico</string>
+    <string name="specialty">Especialidad</string>
+    <string name="observations">Observaciones</string>
+    <string name="save">Guardar</string>
+    <string name="cancel">Cancelar</string>
+</resources>
