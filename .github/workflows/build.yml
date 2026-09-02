@@ -10,10 +10,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    
-    env:
-      GRADLE_OPTS: "-Xmx2048m -XX:MaxMetaspaceSize=512m"
-      JAVA_TOOL_OPTIONS: "-Xmx2048m"
 
     steps:
     - name: Checkout code
@@ -31,11 +27,8 @@ jobs:
         java -version
         javac -version
 
-    - name: Grant execute permission for gradlew
-      run: chmod +x gradlew
-
     - name: Build APK with Gradle
-      run: ./gradlew assembleDebug --stacktrace --info
+      run: ./gradlew clean assembleDebug --stacktrace --info
 
     - name: Upload APK
       uses: actions/upload-artifact@v4
